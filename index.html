@@ -3,11 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta
+      name="description"
+      content="Ali KhodaeiDoost - Software Engineer and Frontend Developer specializing in JavaScript, React.js, Next.js, and modern web technologies"
+    />
+    <meta
+      name="keywords"
+      content="frontend developer, software engineer, react, nextjs, javascript, portfolio"
+    />
+    <meta name="author" content="Ali KhodaeiDoost" />
+    <meta property="og:title" content="Ali KhodaeiDoost - Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Ali KhodaeiDoost, a Software Engineer specializing in modern web technologies"
+    />
+    <meta property="og:image" content="og-image.jpg" />
+    <meta property="og:url" content="https://alithecodeguy.github.io" />
+    <title>Ali KhodaeiDoost | Frontend Developer</title>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      as="font"
+      crossorigin
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -15,427 +49,366 @@
     />
   </head>
   <body>
-    <div class="cursor"></div>
+    <div class="cursor" aria-hidden="true"></div>
     <header>
       <div class="container">
-        <nav>
+        <nav aria-label="Main navigation">
           <div class="logo">
-            <h1>Ali<span>KhodaeiDoost</span></h1>
+            <h1>
+              <a href="#home">Ali<span>KhodaeiDoost</span></a>
+            </h1>
           </div>
           <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#home" class="active" aria-current="page">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <!-- <li><a href="#contact">Contact</a></li> -->
           </ul>
-          <div class="hamburger">
+          <button
+            class="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </nav>
       </div>
     </header>
 
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="glitch" data-text="Hello, I'm">Hello, I'm</h1>
-          <h2 class="name">Ali KhodaeiDoost</h2>
-          <h3 class="title">Software Engineer - FrontEnd Developer</h3>
-          <p>
-            Dedicated software engineer skilled in JavaScript, TypeScript,
-            React.js, Next.js, Redux, and Node.js. Known for innovative problem
-            solving, reliable decision-making, and fostering results-driven
-            teams. Open to relocation.
-          </p>
-          <!-- <div class="cta-buttons">
-            <a href="#contact" class="btn primary-btn">Get in Touch</a>
-            <a href="#projects" class="btn secondary-btn">View My Work</a>
-          </div> -->
-          <div class="social-links">
-            <a href="https://github.com/alithecodeguy" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/alithecodeguy/" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="mailto:alithecodeguy@gmail.com"
-              ><i class="fas fa-envelope"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-down">
-        <a href="#about"><i class="fas fa-chevron-down"></i></a>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>About Me</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="about-content">
-          <div class="about-img">
-            <div class="img-container">
-              <img src="image.jpg" alt="Your Name" />
-            </div>
-          </div>
-          <div class="about-text">
-            <h3>Who I Am</h3>
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="glitch" data-text="Hello, I'm">Hello, I'm</h1>
+            <h2 class="name">Ali KhodaeiDoost</h2>
+            <h3 class="title">Software Engineer - Frontend Developer</h3>
             <p>
-              A Senior Software Enginner based in Burnaby, BC, Canada, with
-              expertise in React, Next.js, TypeScript, and Node.js.
+              Dedicated software engineer skilled in JavaScript, TypeScript,
+              React.js, Next.js, Redux, and Node.js. Known for innovative
+              problem solving, reliable decision-making, and fostering
+              results-driven teams. Open to relocation.
             </p>
+            <div class="social-links" aria-label="Social media links">
+              <a
+                href="https://github.com/alithecodeguy"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub Profile"
+              >
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/alithecodeguy/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn Profile"
+              >
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="mailto:alithecodeguy@gmail.com" aria-label="Email me">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-down">
+          <a href="#about" aria-label="Scroll to About section">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
 
-            <h3>What I Do</h3>
-            <p>
-              I build high-performance web applications, modernize stock market
-              systems, and develop enterprise dashboards. I also mentor and
-              teach web development.
-            </p>
+      <section id="about" class="about">
+        <div class="container">
+          <div class="section-header">
+            <h2>About Me</h2>
+            <div class="underline"></div>
+          </div>
+          <div class="about-content">
+            <div class="about-img">
+              <div class="img-container">
+                <img src="image.jpg" alt="Ali KhodaeiDoost" loading="lazy" />
+              </div>
+            </div>
+            <div class="about-text">
+              <h3>Who I Am</h3>
+              <p>
+                A Senior Software Engineer based in Burnaby, BC, Canada, with
+                expertise in React, Next.js, TypeScript, and Node.js.
+              </p>
 
-            <div class="personal-info">
-              <div class="info-item">
-                <span>Name:</span>
-                <p>Ali KhodaeiDoost</p>
-              </div>
-              <div class="info-item">
-                <span>Email:</span>
-                <p>alithecodeguy@gmail.com</p>
-              </div>
-              <div class="info-item">
-                <span>Location:</span>
-                <p>Burnaby, BC, Canada</p>
-              </div>
-              <div class="info-item">
-                <span>Availability:</span>
-                <p>Full-time</p>
+              <h3>What I Do</h3>
+              <p>
+                I build high-performance web applications, modernize stock
+                market systems, and develop enterprise dashboards. I also mentor
+                and teach web development.
+              </p>
+
+              <div class="personal-info">
+                <div class="info-item">
+                  <span>Name:</span>
+                  <p>Ali KhodaeiDoost</p>
+                </div>
+                <div class="info-item">
+                  <span>Email:</span>
+                  <p>
+                    <a href="mailto:alithecodeguy@gmail.com"
+                      >alithecodeguy@gmail.com</a
+                    >
+                  </p>
+                </div>
+                <div class="info-item">
+                  <span>Location:</span>
+                  <p>Burnaby, BC, Canada</p>
+                </div>
+                <div class="info-item">
+                  <span>Availability:</span>
+                  <p>Full-time</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="skills" class="skills">
-      <div class="container">
-        <div class="section-header">
-          <h2>My Skills</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="skills-content">
-          <div class="skill-category">
-            <h3>Technical Skills</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                <h4>HTML5</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 95%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                <h4>CSS3</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 80%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h4>JavaScript</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h4>React.js</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 95%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h4>Next.js</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h4>Node.js</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 60%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h4>Tailwind</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon"><i class="fab fa-js"></i></div>
-                <h4>Redux</h4>
-                <div class="skill-progress">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </div>
-              <!-- Add more skills as needed -->
-            </div>
+      <section id="skills" class="skills">
+        <div class="container">
+          <div class="section-header">
+            <h2>My Skills</h2>
+            <div class="underline"></div>
           </div>
-
-          <div class="skill-category">
-            <h3>Other Skills</h3>
-            <div class="tag-cloud">
-              <span class="tag">Linux</span>
-              <span class="tag">Jira</span>
-              <span class="tag">Azure</span>
-              <span class="tag">Vue</span>
-              <span class="tag">GraphQL</span>
-              <span class="tag">Rest</span>
-              <span class="tag">LightStreamer</span>
-              <span class="tag">AntD</span>
-              <span class="tag">Chart.js</span>
-              <span class="tag">Recharts</span>
-              <span class="tag">Zustand</span>
-              <span class="tag">Jotai</span>
-              <span class="tag">SWR</span>
-              <span class="tag">React-query</span>
-              <!-- Add more skills as needed -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <div class="container">
-        <div class="section-header">
-          <h2>My Projects</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="projects-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="web">Web</button>
-          <button class="filter-btn" data-filter="app">App</button>
-          <button class="filter-btn" data-filter="other">Other</button>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card" data-category="web">
-            <div class="project-img">
-              <img src="charisma.png" alt="Project 1" />
-            </div>
-            <div class="project-info">
-              <h3>Charisma</h3>
-              <p>Investment pltform</p>
-              <div class="project-links">
-                <a
-                  href="https://charisma.ir/"
-                  target="_blank"
-                  class="btn small-btn"
-                  >Live Demo</a
-                >
-                <!-- <a href="#" target="_blank" class="btn small-btn">GitHub</a> -->
-              </div>
-            </div>
-          </div>
-          <div class="project-card" data-category="web">
-            <div class="project-img">
-              <img src="mofid.png" alt="Project 2" />
-            </div>
-            <div class="project-info">
-              <h3>Mofid Securities</h3>
-              <p>Finance service corporation</p>
-              <div class="project-links">
-                <a
-                  href="https://www.emofid.com/"
-                  target="_blank"
-                  class="btn small-btn"
-                  >Live Demo</a
-                >
-                <!-- <a href="#" target="_blank" class="btn small-btn">GitHub</a> -->
-              </div>
-            </div>
-          </div>
-          <!-- Add more projects as needed -->
-        </div>
-      </div>
-    </section>
-
-    <section id="resume" class="resume">
-      <div class="container">
-        <div class="section-header">
-          <h2>My Resume</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="resume-content">
-          <div class="resume-download">
-            <a href="resume.pdf" class="btn primary-btn" download>
-              <i class="fas fa-download"></i> Download Resume
-            </a>
-          </div>
-          <div class="resume-preview">
-            <iframe src="resume.pdf" width="100%" height="600px"></iframe>
-          </div>
-          <div class="resume-sections">
-            <div class="resume-section">
-              <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <span class="date">Nov 2023 - Nov 2024</span>
-                  <h4>Senior Frontend Developer</h4>
-                  <p class="company">Charisma Financial Group, Tehran</p>
-                  <ul>
-                    <li>
-                      Developing two enterprise dashboards using Next.js, Ant
-                      Design, and Redux.
-                    </li>
-                    <li>
-                      Leading the creation of Iran's first stock gifting
-                      platform.
-                    </li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <span class="date">Jun 2022 - Nov 2023</span>
-                  <h4>Senior React Developer</h4>
-                  <p class="company">Mofid Securities, Tehran</p>
-                  <ul>
-                    <li>
-                      Spearheading the modernization of a crucial stock market
-                      system
-                    </li>
-                    <li>
-                      Conducting code reviews, improving code quality, reducing
-                      bugs and enforcing best practices.
-                    </li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <span class="date">Nov 2020 - Jun 2022</span>
-                  <h4>Full Stack Developer (Freelancer)</h4>
-                  <p class="company">Digimenue Startup</p>
-                  <ul>
-                    <li>Developing a live restaurant management app</li>
-                    <li>
-                      Engineering an academic Chrome extension for fake news
-                      detection
-                    </li>
-                  </ul>
-                </div>
-                <!-- Add more work experience as needed -->
-              </div>
-            </div>
-
-            <div class="resume-section">
-              <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <span class="date">2010 - 2015</span>
-                  <h4>Bachelor of Computer Science</h4>
-                  <p class="company">Tabriz University, Iran</p>
-                  <p></p>
-                </div>
-                <!-- Add more education as needed -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- <section id="contact" class="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2>Get In Touch</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="icon"><i class="fas fa-envelope"></i></div>
-              <div class="details">
-                <h3>Email</h3>
-                <p>alithecodeguy@gmail.com</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div class="details">
-                <h3>Location</h3>
-                <p>Burnaby, BC, Canada</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="icon"><i class="fab fa-linkedin"></i></div>
-              <div class="details">
-                <h3>LinkedIn</h3>
-                <p>
-                  <a
-                    href="https://www.linkedin.com/in/alithecodeguy/"
-                    target="_blank"
-                    >linkedin.com/in/yourusername</a
+          <div class="skills-content">
+            <div class="skill-category">
+              <h3>Technical Skills</h3>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="HTML5">
+                  <div class="skill-icon">
+                    <i class="fab fa-html5" aria-hidden="true"></i>
+                  </div>
+                  <h4>HTML5</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="HTML5 skill level: 95%"
                   >
-                </p>
+                    <div class="progress" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="CSS3">
+                  <div class="skill-icon">
+                    <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                  </div>
+                  <h4>CSS3</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="CSS3 skill level: 80%"
+                  >
+                    <div class="progress" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="JavaScript">
+                  <div class="skill-icon">
+                    <i class="fab fa-js" aria-hidden="true"></i>
+                  </div>
+                  <h4>JavaScript</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="JavaScript skill level: 90%"
+                  >
+                    <div class="progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="React">
+                  <div class="skill-icon">
+                    <i class="fab fa-react" aria-hidden="true"></i>
+                  </div>
+                  <h4>React.js</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="React.js skill level: 95%"
+                  >
+                    <div class="progress" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Next.js">
+                  <div class="skill-icon">
+                    <i class="fab fa-react" aria-hidden="true"></i>
+                  </div>
+                  <h4>Next.js</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="Next.js skill level: 90%"
+                  >
+                    <div class="progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Node.js">
+                  <div class="skill-icon">
+                    <i class="fab fa-node-js" aria-hidden="true"></i>
+                  </div>
+                  <h4>Node.js</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="Node.js skill level: 60%"
+                  >
+                    <div class="progress" style="width: 60%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Tailwind">
+                  <div class="skill-icon">
+                    <i class="fab fa-css3" aria-hidden="true"></i>
+                  </div>
+                  <h4>Tailwind</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="Tailwind skill level: 90%"
+                  >
+                    <div class="progress" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item" data-skill="Redux">
+                  <div class="skill-icon">
+                    <i class="fas fa-code" aria-hidden="true"></i>
+                  </div>
+                  <h4>Redux</h4>
+                  <div
+                    class="skill-progress"
+                    aria-label="Redux skill level: 90%"
+                  >
+                    <div class="progress" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Other Skills</h3>
+              <div class="tag-cloud">
+                <span class="tag">Linux</span>
+                <span class="tag">Jira</span>
+                <span class="tag">Azure</span>
+                <span class="tag">Vue</span>
+                <span class="tag">GraphQL</span>
+                <span class="tag">Rest</span>
+                <span class="tag">LightStreamer</span>
+                <span class="tag">AntD</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Recharts</span>
+                <span class="tag">Zustand</span>
+                <span class="tag">Jotai</span>
+                <span class="tag">SWR</span>
+                <span class="tag">React-query</span>
               </div>
             </div>
           </div>
-          <div class="contact-form">
-            <form
-              id="contactForm"
-              action="https://formspree.io/f/your-formspree-id"
-              method="POST"
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <div class="section-header">
+            <h2>My Projects</h2>
+            <div class="underline"></div>
+          </div>
+          <div
+            class="projects-filter"
+            role="tablist"
+            aria-label="Project filters"
+          >
+            <button
+              class="filter-btn active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
             >
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your Name"
-                  required
+              All
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="web"
+              role="tab"
+              aria-selected="false"
+            >
+              Web
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="app"
+              role="tab"
+              aria-selected="false"
+            >
+              Packages
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="other"
+              role="tab"
+              aria-selected="false"
+            >
+              Other
+            </button>
+          </div>
+          <div class="projects-grid">
+            <article class="project-card" data-category="web">
+              <div class="project-img">
+                <img
+                  src="charisma.png"
+                  alt="Screenshot of Charisma investment platform"
+                  loading="lazy"
                 />
               </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
+              <div class="project-info">
+                <h3>Charisma</h3>
+                <p>
+                  Investment platform with advanced trading features and
+                  user-friendly interface.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://charisma.ir/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn small-btn"
+                  >
+                    View Project
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card" data-category="web">
+              <div class="project-img">
+                <img
+                  src="mofid.png"
+                  alt="Screenshot of Mofid Securities website"
+                  loading="lazy"
                 />
               </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="Subject"
-                />
+              <div class="project-info">
+                <h3>Mofid Securities</h3>
+                <p>
+                  Comprehensive finance service platform offering trading tools
+                  and market insights.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://www.emofid.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn small-btn"
+                  >
+                    View Project
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
               </div>
-              <div class="form-group">
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Your Message"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn primary-btn">
-                Send Message
-              </button>
-            </form>
+            </article>
           </div>
         </div>
-      </div>
-    </section> -->
+      </section>
+    </main>
 
     <footer>
       <div class="container">
@@ -443,25 +416,33 @@
           <div class="footer-logo">
             <h2>Ali<span>KhodaeiDoost</span></h2>
           </div>
-          <div class="footer-social">
-            <a href="https://github.com/alithecodeguy" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/alithecodeguy/" target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="mailto:alithecodeguy@gmail.com"
-              ><i class="fas fa-envelope"></i
-            ></a>
+          <div class="footer-social" aria-label="Social media links">
+            <a
+              href="https://github.com/alithecodeguy"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub Profile"
+            >
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/alithecodeguy/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn Profile"
+            >
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:alithecodeguy@gmail.com" aria-label="Email me">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
           </div>
-          <div class="footer-nav">
+          <nav class="footer-nav" aria-label="Footer navigation">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#resume">Resume</a>
-            <a href="#contact">Contact</a>
-          </div>
+          </nav>
         </div>
         <div class="copyright">
           <p>&copy; <span id="currentYear"></span> All rights reserved.</p>
@@ -470,9 +451,12 @@
     </footer>
 
     <div class="back-to-top">
-      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+      <a href="#home" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+      </a>
     </div>
 
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
   </body>
 </html>
