@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Run animation functions
+  // Initialize all features
   window.addEventListener("load", () => {
     animateSections();
     initMagneticButtons();

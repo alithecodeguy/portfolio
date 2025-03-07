@@ -1,0 +1,7 @@
+/* Reset and normalize styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Add the rest of your reset styles */
