@@ -168,7 +168,7 @@ img {
   }
 }
 
-/* Custom cursor */
+/* Custom cursor - completely hidden on touch devices */
 .cursor {
   position: fixed;
   width: 20px;
@@ -179,25 +179,27 @@ img {
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.1s ease, background 0.3s ease;
-  display: block;
+  display: none; /* Hidden by default */
   mix-blend-mode: difference;
 }
 
-.cursor-hover {
-  transform: translate(-50%, -50%) scale(3);
-  background: white;
-  mix-blend-mode: difference;
-}
-
-@media (min-width: 1024px) {
+/* Only show cursor on desktop devices */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
   .cursor {
     display: block;
   }
 
-  a:hover ~ .cursor,
-  button:hover ~ .cursor {
-    transform: translate(-50%, -50%) scale(2);
-    background: rgba(0, 123, 255, 0.15);
+  .cursor-hover {
+    transform: translate(-50%, -50%) scale(3);
+    background: white;
+    mix-blend-mode: difference;
+  }
+}
+
+/* Explicitly hide cursor on touch devices */
+@media (hover: none) or (pointer: coarse) {
+  .cursor {
+    display: none !important;
   }
 }
 
@@ -1117,48 +1119,142 @@ footer {
 
 /* Responsive */
 @media (max-width: 991px) {
-  .hero .name {
-    font-size: 3rem;
+  /* Adjust header for better mobile experience */
+  header {
+    padding: 10px 0;
   }
 
-  .hero .title {
+  .logo h1 {
     font-size: 1.5rem;
   }
-}
 
-@media (max-width: 768px) {
-  section {
-    padding: 70px 0;
-  }
-
+  /* Improve hero section on mobile */
   .hero {
     height: auto;
-    padding: 150px 0 100px;
+    min-height: 100vh;
+    padding: 120px 0 80px;
   }
 
   .hero .name {
     font-size: 2.5rem;
   }
 
-  .projects-grid,
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .hero .title {
+    font-size: 1.2rem;
   }
-}
 
-@media (max-width: 576px) {
+  /* Adjust section padding */
+  section {
+    padding: 60px 0;
+  }
+
+  /* Improve about section layout */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-img {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  /* Adjust skill items for better mobile display */
+  .skill-item {
+    padding: 15px;
+  }
+
+  /* Make project cards look better on mobile */
+  .project-card {
+    margin-bottom: 20px;
+  }
+
+  /* Adjust timeline for mobile */
+  .timeline-item {
+    padding-left: 25px;
+  }
+
+  .timeline-item::before {
+    left: -20px;
+  }
+
+  /* Adjust form elements */
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+  }
+
+  /* Better button spacing on mobile */
   .cta-buttons {
     flex-direction: column;
     gap: 15px;
   }
 
-  .btn {
+  .cta-buttons .btn {
     width: 100%;
+  }
+
+  /* Fix footer on mobile */
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
   }
 
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* Specific tablet adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero .name {
+    font-size: 3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Smaller devices (phones) */
+@media (max-width: 576px) {
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tag-cloud {
+    justify-content: center;
+  }
+
+  .projects-filter {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Improve resume section on mobile */
+  .resume-preview {
+    height: 400px;
+  }
+
+  iframe {
+    height: 400px;
   }
 }
 
