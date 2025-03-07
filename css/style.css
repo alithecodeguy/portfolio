@@ -264,50 +264,126 @@ nav {
   width: 100%;
 }
 
+/* Hamburger animation - refined version */
 .hamburger {
-  display: none;
+  position: relative;
   cursor: pointer;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
+  display: none;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  margin: -10px;
+  outline: none;
+}
+
+.hamburger:focus {
+  outline: none;
 }
 
 .hamburger span {
   display: block;
-  height: 3px;
-  width: 100%;
-  background: var(--text-color);
-  border-radius: 3px;
-  transition: all var(--animation-timing) ease;
+  width: 28px;
+  height: 2px;
+  margin-bottom: 7px;
+  position: relative;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+    opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.hamburger span:last-child {
+  margin-bottom: 0;
+  width: 24px; /* Make last bar slightly shorter for style */
+  margin-left: auto;
+}
+
+/* X transformation when active - improved */
+.hamburger.active span:first-child {
+  transform: rotate(45deg) translate(6px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:last-child {
+  width: 28px; /* Make it full width when active */
+  transform: rotate(-45deg) translate(5px, -7px);
+}
+
+/* Hover effect */
+.hamburger:hover span {
+  background: var(--primary-color);
+}
+
+.hamburger:hover span:nth-child(2) {
+  transform: scaleX(0.8);
+}
+
+.hamburger.active:hover span {
+  transform-origin: center;
+}
+
+.hamburger.active:hover span:first-child {
+  transform: rotate(45deg) translate(6px, 7px);
+}
+
+.hamburger.active:hover span:last-child {
+  transform: rotate(-45deg) translate(5px, -7px);
+}
+
+@media (max-width: 991px) {
   .hamburger {
-    display: flex;
+    display: block;
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 70px;
     left: 0;
     width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    background: var(--card-background);
+    gap: 0;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all var(--animation-timing) ease;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999;
+    padding: 0;
   }
 
   .nav-links.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 600;
   }
 }
 
